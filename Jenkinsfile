@@ -15,6 +15,9 @@ pipeline
                           abi binary scan --timeout 40 --wait  --report_name SampleWin --include_components  --zip_file SampleWin_1.0.00.7349.zip --username USERNAME --password "\"${PASSWORD}\"" 
                      '''
                 }
-          }
-      }
+            }
+        }
+    }
 }
+
+  

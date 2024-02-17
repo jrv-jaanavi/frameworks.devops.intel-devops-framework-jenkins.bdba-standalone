@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest version="2.0">
+    <artifactory-alias name="default">
+        <read-uri>https://ubit-artifactory.intel.com/artifactory</read-uri>
+        <write-uri>https://ubit-artifactory.intel.com/artifactory</write-uri>
+    </artifactory-alias>
+    <artifactory name="Submissions" alias="default" pkg-root="Submissions" repo="owr-repos" />
+    <project name="SampleWin" ingredient="samplewin" pkg-path="." version="1.0.00.7349" artifactory="Submissions" type="bldtool" hsd-full-name="platform.Common.sw.tool.Microsoft SampleWin">
+        <platforms />
+        <annotations>
+            <annotation name="maintainer" value="russ.earl@intel.com" />
+            <annotation name="vendor" value="Microsoft" />
+        </annotations>
+    </project>
+</manifest>

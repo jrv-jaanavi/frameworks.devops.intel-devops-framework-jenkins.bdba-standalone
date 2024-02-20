@@ -17,6 +17,8 @@ scan_id = post_response_json["id"]
 
 get_url = f"http://onekitscan.idoc.intel.com/api/v1/scan?id={scan_id}"
 
-post_response = requests.get(get_url)
+get_response = requests.get(get_url)
 
-print("Status of scan: ",post_response)
+get_response_json = get_response.json()
+
+print("Status of scan: ", get_response_json)

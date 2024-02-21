@@ -25,4 +25,4 @@ bdba_scan_cmd = f"abi binary_scan scan --timeout 40 --wait --tool_url https://bd
 bdba_scan_cmd_output = subprocess.run(bdba_scan_cmd, capture_output=True, text=True)
 
 print(bdba_scan_cmd_output.stdout)
-print(bdba_scan_cmd_output.stderr)
+#print(bdba_scan_cmd_output.stderr)

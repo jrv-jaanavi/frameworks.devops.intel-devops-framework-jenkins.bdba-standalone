@@ -12,7 +12,7 @@ subprocess.call(download_artifact, shell=True)
 
 artifact_output = subprocess.run(['ls', '-l'], capture_output=True, text=True)
 
-print(result.stdout)
+print(artifact_output.stdout)
 
 pip_cmd = f"pip install --upgrade pip && pip install  abi==3.0.0 --extra-index-url=https://ubit-artifactory-or.intel.com/artifactory/api/pypi/one-windows-pypi-local/simple --proxy=http://proxy-chain.intel.com:912 "
 

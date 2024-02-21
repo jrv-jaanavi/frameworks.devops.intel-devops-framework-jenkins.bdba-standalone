@@ -1,22 +1,24 @@
 pipeline
 {
   agent {  label 'win' }
+  
+  environment{
+      ScanCred = credentials('OWR_SCAN_BINARY')
+  }
 
-  parameters { string(name: 'ArtifactURL', defaultValue: '', description: 'Artifactory link') }
+  parameters { string(name: 'ArtifactURL', defaultValue: '', description: 'Artifactory link')
+               string(name: 'Artifactpkgname', defaultValue: '', description: 'Artifact package name to be consumed')
+  }
   
   stages {
         stage('BDBA') { 
             steps{
-                    withCredentials([usernamePassword(credentialsId: 'OWR_SCAN_BINARY', passwordVariable: 'password', usernameVariable: 'username')]) {
+                   
                      bat '''
-                          C:\\OWR\\Tools\\wit.exe sync-V2 -o samplewin  -m Manifest.xml
-                          pip install --upgrade pip
-                          pip install  abi==3.0.0 --extra-index-url=https://ubit-artifactory-or.intel.com/artifactory/api/pypi/one-windows-pypi-local/simple --proxy="http://proxy-chain.intel.com:912
-                          abi binary_scan scan --timeout 40 --wait --tool_url "https://bdba001.icloud.intel.com" --tool_group "6"  --report_name SampleWin --include_components  --zip_file SampleWin_1.0.00.7349.zip --username "%username%" --password "%password%" --debug 
+                          python abi_bdba_scan.py ${ArtifactURL} ${Artifactpkgname}
                      '''
-                }
             }
-        }
+        } 
     }
 }
 

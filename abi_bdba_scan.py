@@ -12,6 +12,8 @@ return_code = subprocess.call(download_artifact, shell=True)
 
 if return_code == 0:
   print("Successfully executed")
+else:
+  print("Execution failed")
 
 
 artifact_output = subprocess.run(['ls', '-l'], capture_output=True, text=True)

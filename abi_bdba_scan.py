@@ -14,6 +14,7 @@ import os
 # print(return_code.stdout)
 # print(return_code.stderr)
 
+print("BDBA execution")
 artifact_output = subprocess.run(['ls', '-l'], capture_output=True, text=True)
 
 print(artifact_output.stdout)

@@ -8,13 +8,10 @@ scan_password = os.environ.get("ScanCred_PSW")
 
 artifact_url = sys.argv[1]
 download_artifact = f"curl -u {scan_username}:{scan_password} -O {artifact_url}"
-return_code = subprocess.call(download_artifact, shell=True)
+return_code = subprocess.run(download_artifact, capture_output=True, text=True)
 
-if return_code == 0:
-  print("Successfully executed")
-else:
-  print("Execution failed")
-
+print(return_code.stdout)
+print(return_code.stderr)
 
 artifact_output = subprocess.run(['ls', '-l'], capture_output=True, text=True)
 

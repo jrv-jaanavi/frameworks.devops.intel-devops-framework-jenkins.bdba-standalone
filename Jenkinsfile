@@ -13,9 +13,9 @@ pipeline
   stages {
         stage('BDBA') { 
             steps{
-                   
+                   script{
                   bat(returnStdout: true, script: "python abi_bdba_scan.py ${ArtifactURL} ${Artifactpkgname}")
-                     
+                   }   
             }
         } 
     }

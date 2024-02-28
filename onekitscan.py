@@ -17,7 +17,7 @@ for i in range(iterations):
   get_response = requests.get(get_url)
   get_response_json = get_response.json()
   print("Status of scan: ", get_response_json)
-  if get_response_json['Status'] == "Success":
+  if get_response_json['status'] == "Success":
     break
   time.sleep(100)
   iterations-=1

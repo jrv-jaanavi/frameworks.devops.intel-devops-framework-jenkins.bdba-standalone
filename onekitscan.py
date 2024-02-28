@@ -24,6 +24,6 @@ for i in range(iterations):
   if i == iterations - 1:
     print("Retry exceeded")
     break
-  print("Retrying status check:" + result)
+  print("Retrying status check:" + get_response_json)
     
 

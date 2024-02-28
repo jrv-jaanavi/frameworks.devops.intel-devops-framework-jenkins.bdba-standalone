@@ -19,6 +19,14 @@ pipeline
                 }   
             }
         } 
+        stage('Onekit') { 
+            steps{
+                   script{
+                   def output2 =  bat(returnStdout: true, script: "python  onekitscan.py ${ArtifactURL} ")
+                   println "Output from bat execution:" + output2
+                }   
+            }
+        } 
     }
 }
 

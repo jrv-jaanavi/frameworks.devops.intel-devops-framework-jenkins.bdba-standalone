@@ -30,7 +30,7 @@ print(pip_cmd_output.stderr)
 
 timestamp = time.time()
 pkg_name = sys.argv[2]
-new_pkg_name = pkg_name + "_" + timestamp
+new_pkg_name = pkg_name + "_" + str(timestamp)
 os.rename(pkg_name,new_pkg_name)
 os.remove(pkg_name)
 bdba_scan_cmd = f"abi binary_scan scan --timeout 40 --wait --tool_url https://bdba001.icloud.intel.com --tool_group 6  --report_name BDBA_Report --include_components  --zip_file {new_pkg_name} --username {scan_username} --password {scan_password} --debug "

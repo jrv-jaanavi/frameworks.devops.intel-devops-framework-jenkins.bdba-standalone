@@ -11,7 +11,7 @@ post_response_json = post_response.json()
 print("Response after uploading to BDBA server: ", post_response_json)
 scan_id = post_response_json["id"]
 get_url = f"http://onekitscan.idoc.intel.com/api/v1/scan?id={scan_id}"
-iterations = 20
+iterations = 1000
 for i in range(iterations):
   get_response = requests.get(get_url)
   get_response_json = get_response.json()

@@ -1,6 +1,7 @@
 import requests
 import sys
 import datetime
+import time
 
 
 file_url = sys.argv[1]

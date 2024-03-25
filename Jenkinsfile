@@ -28,10 +28,10 @@ pipeline
         } 
 
      stage('OneKitscan') { 
+          environment{
+                 Authtoken = credentials('OWR_Authtoken')
+                }
             steps{
-               environment{
-                      Authtoken = credentials('OWR_Authtoken')
-                      }
                    script{
                    def output3 =  bat(returnStdout: true, script: "python onekitbdbascan.py ")
                    println "Output from OneKit Scan execution:" + output3

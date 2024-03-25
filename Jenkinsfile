@@ -4,7 +4,7 @@ pipeline
   
   environment{
       ScanCred = credentials('OWR_SCAN_BINARY')
-      Authtoken_USR = credentials('OWR_Authtoken')
+      Authtoken = credentials('OWR_Authtoken')
   }
 
   parameters { string(name: 'ArtifactURL', defaultValue: '', description: 'Artifactory link')

@@ -21,8 +21,8 @@ artifact_output = subprocess.run(['ls', '-l'], capture_output=True, text=True)
 print(artifact_output.stdout)
 print(artifact_output.stderr)
 
-pip_cmd = f"pip install  abi==3.0.0 --extra-index-url=https://ubit-artifactory-or.intel.com/artifactory/api/pypi/one-windows-pypi-local/simple --proxy=http://proxy-chain.intel.com:912 "
-pip_cmd_split = pip_cmd.split()
+pip_cmd = "pip install --upgrade pip, pip install abi==3.1.0 --extra-index-url=https://ubit-artifactory-or.intel.com/artifactory/api/pypi/one-windows-pypi-local/simple --proxy=http://proxy-chain.intel.com:912 "
+pip_cmd_split = pip_cmd.split(",")
 pip_cmd_output = subprocess.run(pip_cmd, capture_output=True, text=True)
 
 print(pip_cmd_output.stdout)

@@ -4,7 +4,7 @@ import time
 import os
 
 token_gen_url = "https://onekitdev.app.intel.com/api/v1/auth/azure_token_generation"
-file_status_fetch = "https://onekitdev.app.intel.com/api/v1/Package/Files/818930"
+file_status_fetch = "https://onekitdev.app.intel.com/api/v1/Package/Files/894968"
 forced_sec_scan = "https://onekitdev.app.intel.com/api/v1/securityscans/scan"
 
 scan_username = os.environ.get("Authtoken_USR")

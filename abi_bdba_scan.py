@@ -16,10 +16,6 @@ print(return_code.stdout)
 print(return_code.stderr)
 
 print("BDBA execution")
-artifact_output = subprocess.run(['ls', '-l'], capture_output=True, text=True)
-
-print(artifact_output.stdout)
-print(artifact_output.stderr)
 
 pip_cmd = "pip install --upgrade pip, pip install abi==3.1.0 --extra-index-url=https://ubit-artifactory-or.intel.com/artifactory/api/pypi/one-windows-pypi-local/simple --proxy=http://proxy-chain.intel.com:912 "
 pip_cmd_split = pip_cmd.split(",")
@@ -33,6 +29,12 @@ pkg_name = sys.argv[2]
 name, ext = os.path.splitext(pkg_name)
 new_pkg_name = name + f"{timestamp}" + ext
 os.rename(pkg_name,new_pkg_name)
+
+return_code = subprocess.run(download_artifact_split, capture_output=True, text=True)
+
+print(return_code.stdout)
+print(return_code.stderr)
+
 bdba_scan_cmd = f"abi binary_scan scan --timeout 40 --wait --tool_url https://bdba001.icloud.intel.com --tool_group 6  --report_name BDBA_Report --include_components  --zip_file {new_pkg_name} --username {scan_username} --password {scan_password} --debug "
 bdba_scan_cmd_split = bdba_scan_cmd.split()
 print("ABI Command :", bdba_scan_cmd_split)

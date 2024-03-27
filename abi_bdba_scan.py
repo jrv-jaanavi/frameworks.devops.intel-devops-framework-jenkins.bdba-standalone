@@ -18,13 +18,13 @@ print(return_code.stderr)
 print("BDBA execution")
 
 pip_cmd1 = "pip install --upgrade pip"
-pip_cmd_output1 = subprocess.run(pip_cmd, capture_output=True, text=True)
+pip_cmd_output1 = subprocess.run(pip_cmd1, capture_output=True, text=True)
 print(pip_cmd_output1.stdout)
 print(pip_cmd_output1.stderr)
 
 pip_cmd2 = "pip install abi==3.1.0 --extra-index-url=https://ubit-artifactory-or.intel.com/artifactory/api/pypi/one-windows-pypi-local/simple --proxy=http://proxy-chain.intel.com:912 "
 pip_cmd_split2 = pip_cmd.split(",")
-pip_cmd_output2 = subprocess.run(pip_cmd, capture_output=True, text=True)
+pip_cmd_output2 = subprocess.run(pip_cmd2, capture_output=True, text=True)
 
 print(pip_cmd_output2.stdout)
 print(pip_cmd_output2.stderr)

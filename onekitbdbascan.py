@@ -16,7 +16,7 @@ temp_token = token_response['data']['access_token']
 print("print token:", temp_token)
 
 headers = {"X-access": temp_token, "accept": "application/json", "Content-Type": "application/json"}
-body = {"type": "file", "id": "62936ed3-4f80-4778-8cc6-e5b6074b58dd", "forced": True}
+body = {"type": "file", "id": "f99b75f3-4dc9-4bb6-9697-e68417030c54", "forced": True}
 upload_time = datetime.datetime.utcnow()
 scan_response = requests.post(forced_sec_scan, json=body, headers=headers, verify=False)
 
